@@ -29,3 +29,4 @@ class IncidentImages(models.Model):
 
     class Meta:
         unique_together = ("incident_report", "incident_image")
+        verbose_name_plural = "Incident Images"
