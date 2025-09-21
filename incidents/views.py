@@ -6,7 +6,7 @@ from .forms import FileFieldForm
 
 class FileFieldFormView(FormView):
     form_class = FileFieldForm
-    template_name = "core/upload.html"  # Your template
+    template_name = "incidents/upload.html"  # Your template
     success_url = reverse_lazy("upload_success")
 
     def form_valid(self, form):

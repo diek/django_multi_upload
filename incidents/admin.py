@@ -22,9 +22,17 @@ class IncidentImageAdmin(admin.ModelAdmin):
 
 @admin.register(IncidentReport)
 class IncidentReportAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "description", "date_reported")
+    list_display = ("id", "title", "description", "date_reported", "show_images")
     list_filter = ("date_reported",)
-    raw_id_fields = ("images",)
+
+    def show_images(self, obj):
+        images = obj.images.all()
+        html = ""
+        for image in images:
+            html += f'<img src="{image.image.url}" width="50" style="margin:2px;" />'
+        return mark_safe(html)
+
+    show_images.short_description = "Images"
 
 
 @admin.register(IncidentImages)

@@ -6,7 +6,7 @@ urlpatterns = [
     path("upload/", FileFieldFormView.as_view(), name="file_upload"),
     path(
         "upload/success/",
-        TemplateView.as_view(template_name="core/upload_success.html"),
+        TemplateView.as_view(template_name="incidents/upload_success.html"),
         name="upload_success",
     ),
 ]

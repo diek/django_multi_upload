@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-2q&x7i)ve19oewr*#&qj9qts^m1l23z2)4k&5wv4f)5n$a+13u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["djangobasics.com", "localhost", "134.199.153.51"]
+ALLOWED_HOSTS = ["djangobasics.com", "localhost", "127.0.0.1", "134.199.153.51"]
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "core.apps.CoreConfig",
+    "incidents.apps.IncidentsConfig",
     "pages.apps.PagesConfig",
     "django_extensions",
 ]
@@ -78,7 +78,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "uploader.db",
+        "NAME": BASE_DIR / "incident_uploader.db",
     }
 }
 
